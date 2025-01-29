@@ -20,18 +20,14 @@ This project is part of the CS50W course. It is a simple wiki application that a
     ```bash
     cd wiki
     ```
-3. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-4. Run the application:
+3. Run the application:
     ```bash
     python manage.py runserver
     ```
 
 ## Usage
 
-- Navigate to `http://127.0.0.1:8000` in your web browser.
+- Navigate to `http://127.0.0.1:8000/wiki` in your web browser.
 - Use the navigation bar to create, edit, or view pages.
 
 ## Contributing
