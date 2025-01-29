@@ -1,0 +1,32 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Encyclopedia| Create_New_Page
+{% endblock title %}
+
+{% block body %}
+
+    <div class="c-container">
+            {% if message %}
+        <div class="alert text-center alert-danger">{{ message }}</div>
+    {% endif %}
+
+    <h1 class="text-center">What topic would you like to discuss today?</h1>
+
+    <form class="post" action="{% url 'newpage' %}" method="post">
+            {% csrf_token %}
+            <div>
+                <div>
+                    <input class="form-control" type="text" placeholder="Title" name="title">  
+                </div>
+               <input class="btn btn-outline-secondary" type="submit" value="Save">
+            </div>
+            <textarea class="form-control" name="content" id="" placeholder="Content" style="height: 100px; margin: 5px;"></textarea>
+            
+    </form>
+
+    </div>
+
+    
+
+{% endblock %}
