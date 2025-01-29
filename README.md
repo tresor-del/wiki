@@ -14,7 +14,7 @@ This project is part of the CS50W course. It is a simple wiki application that a
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/wiki.git
+    git clone https://github.com/tresor-del/wiki.git
     ```
 2. Navigate to the project directory:
     ```bash
