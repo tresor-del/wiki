@@ -1,0 +1,41 @@
+
+.c-container {
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 5rem;
+
+    .post {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 50px;
+    height: 100%;
+    div{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    div{
+        display: flex;
+        gap: 10px;
+    }
+
+    textarea {
+        flex-grow: 1;
+        width: 100%;
+        border: 1px solid gray;
+        resize: none;
+        overflow: scroll;
+        outline: none;
+    }
+
+    input[type='text']{
+        border: 1px solid gray;
+        outline: none;
+        display: inline-block;
+        width: 200px;
+    }
+}
+}

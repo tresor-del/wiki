@@ -1,0 +1,20 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3.2rem;
+    background-color: rgb(94, 99, 97);
+    color: white;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    div{
+        a{
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
