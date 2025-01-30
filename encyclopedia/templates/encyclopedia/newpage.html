@@ -13,20 +13,19 @@ Encyclopedia| Create_New_Page
 
     <h1 class="text-center">What topic would you like to discuss today?</h1>
 
-    <form class="post" action="{% url 'newpage' %}" method="post">
+    <form class="m-5" action="{% url 'newpage' %}" method="post">
             {% csrf_token %}
-            <div>
-                <div>
-                    <input class="form-control" type="text" placeholder="Title" name="title">  
+            <div class="d-flex justify-content-between">
+                <div class=" ">
+                    <input type="text" placeholder="Title" name="title" autofocus>  
                 </div>
-               <input class="btn btn-outline-secondary" type="submit" value="Save">
+               <input  type="submit" value="Save">
             </div>
-            <textarea class="form-control" name="content" id="" placeholder="Content" style="height: 100px; margin: 5px;"></textarea>
+            <textarea style="height: 400px; overflow: auto; resize: none;"  name="content" id="" placeholder="Put The Content here" style="height: 100px; margin: 5px;"></textarea>
             
     </form>
 
     </div>
-
     
 
 {% endblock %}

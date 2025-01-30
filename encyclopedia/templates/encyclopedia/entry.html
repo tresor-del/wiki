@@ -5,8 +5,11 @@
 {% block nav %}
 
 
-<a href="Edit/{{ page }}">Edit this page</a>{% endblock %}
+<a class="d-block mt-3" href="Edit/{{ page }}">Edit this page</a>{% endblock %}
 
 {% block body %}
-    {{ entry | safe}}
+    <div class="my-3 px-4">
+       {{ entry | safe}} 
+    </div>
+    
 {% endblock %}

@@ -1,16 +1,26 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    Encyclopedia
+Encyclopedia
 {% endblock %}
 
 {% block body %}
-    <h1>All Pages</h1>
 
-    <ul>
-        {% for entry in entries %}
-            <li><a href="{{ entry }}">{{ entry }}</a></li>
-        {% endfor %}
-    </ul>
+<div class="mt-5 home">
+        <p>All topics: <br> 
+            {% for entry in entries %}
+           <a class="m-1" href="{{ entry }}">{{ entry }}</a>, 
+            {% endfor %}
+        </p>
+
+        <div class="mt-5 random">
+            <h3>For you:</h3>
+            <div class="content">
+                {{ content|truncatewords:20|safe }}... <br><a href="/wiki/{{ randomtopic }}">see more </a></p>
+            </div>
+            
+        </div>
+</div>
+
 
 {% endblock %}

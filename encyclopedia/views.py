@@ -40,8 +40,13 @@ def index(request):
                             'title': search,
                             'result': len(search_list)
                         })
+    randomtopic = random.choice(util.list_entries())
+    content = util.get_entry(randomtopic)
+    content_to_html = markdown2.markdown(content)
     return render(request, "encyclopedia/index.html", {
-        "entries": util.list_entries()
+        "entries": util.list_entries(),
+        'randomtopic': randomtopic,
+        'content': content_to_html
     })
                     
 

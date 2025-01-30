@@ -3,38 +3,48 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="{% static 'encyclopedia/main.css' %}" rel="stylesheet">
-        <link href="{% static 'encyclopedia/create_page.css' %}" rel="stylesheet">
-        <link href="{% static 'encyclopedia/navbar.css' %}" rel="stylesheet">
-    </head>
-    <body>
-        <div class="row">
-            <div class="sidebar col-lg-2 col-md-3">
-                <h2>Wiki</h2>
-                <form action="/wiki/" method="post">
-                    {% csrf_token %}
-                    <input class='form-control' class="search" type="text" name="q" placeholder="Search Encyclopedia">
-                </form>
-                <div>
-                    <a href="{% url 'index' %}">Home</a>
-                </div>
-                <div>
-                    <a href="{% url 'newpage' %}">Create New Page</a>
-                </div>
-                <div>
-                    <a href="{% url "random_page" 'randomfile' %}">Random Page</a>           
-                </div>
-                {% block nav %}
-                {% endblock %}
-            </div>
-            <div class="main col-lg-10 col-md-9">
-                {% block body %}
-                {% endblock %}
-            </div>
-        </div>
 
-    </body>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'encyclopedia/main.css' %}" rel="stylesheet">
+    <link href="{% static 'encyclopedia/create_page.css' %}" rel="stylesheet">
+    <link href="{% static 'encyclopedia/navbar.css' %}" rel="stylesheet">
+    <link href="{% static 'encyclopedia/index.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="row">
+        <div class=" sidebar col-lg-3 col-md-3">
+            <p>Welcome to</p>
+            <h3><span>Wiki</span>, Your gateway to a world of knowledge. </h3>
+            <p>Explore, learn, and grow with our free online encyclopedia.</p>
+            <div class="links">
+            <form action="/wiki/" method="post">
+                {% csrf_token %}
+                <input class='form-control search ' class="search" type="text" name="q" placeholder="Search Encyclopedia">
+            </form>
+            
+                <a href="{% url 'index' %}">Home</a>
+                <a  href="{% url 'newpage' %}">Create New Page</a>
+                <a  href="{% url 'random_page' 'randomfile' %}">Random Page</a>
+            </div>
+            {% block nav %}
+            {% endblock %}
+        </div>
+        <div class="main col-lg-9 col-md-9 p-0">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+
+</body>
+
 </html>

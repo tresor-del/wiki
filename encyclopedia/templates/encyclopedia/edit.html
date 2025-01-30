@@ -7,11 +7,18 @@ Encyclopedia | Edit | {{ title }}
 
 {% block body %}
 
-<form action="{{ title }}" method="post">
+<h1 class="text-center">Edit Page</h1>
+
+<form class="m-5" action="{{ title }}" method="post">
     {% csrf_token %}
-    <input type="text" name="title" value="{{ title }}">
-    <textarea name="content" >{{ content.strip }}</textarea>
+    
+    <div class="d-flex justify-content-between">
+        <input type="text" name="title" value="{{ title }}">
     <input type="submit" value="Save">
+    </div>
+    
+    <textarea style="height: 400px; overflow: auto; resize: none;"  name="content" id="" placeholder="Put The Content here" style="height: 100px; margin: 5px;">{{ content.strip }}</textarea>
+    
 </form>
 
 {% endblock body %}
